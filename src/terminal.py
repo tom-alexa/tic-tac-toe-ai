@@ -13,4 +13,4 @@ def print_winner(winner):
     print(f"Winner is {winner}\n")
 
 def print_draw():
-    print("It's a draw")
+    print("It's a draw\n")

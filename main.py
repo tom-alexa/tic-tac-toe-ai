@@ -1,19 +1,20 @@
+import random
 from src.game import Game
 
-PLAYERS = {
-    "cross": {
-        "name": "ahoj",
-        "ai": True,
-    },
-    "circle": {
-        "name": "čau",
-        "ai": False,
-    },
-}
+NAMES = ["Johny", "Jacob", "Lukas", "Tom", "George", "Carl"]
 
 
 def main():
-    game = Game(PLAYERS)
+    players = {"cross": {"ai": True, "name": random.choice(NAMES)}, "circle": {"ai": True, "name": random.choice(NAMES)}}
+    first = input("Player's one name [no input means AI]: ")
+    if first:
+        players["cross"]["name"] = first
+        players["cross"]["ai"] = False
+    second = input("Player's two name [no input means AI]: ")
+    if first:
+        players["cross"]["name"] = second
+        players["cross"]["ai"] = False
+    game = Game(players)
     game.run()
 
 
