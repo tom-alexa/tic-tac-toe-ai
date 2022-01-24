@@ -1,6 +1,6 @@
 import random
 
-def minimax(cross, circle, board, turn, get_current_player, get_possible_moves, make_move, check_winner, depth=9):
+def minimax(cross, circle, board, turn, get_current_player, get_possible_moves, make_move, check_winner):
     possible_moves = get_possible_moves(board)
     current_player = get_current_player(turn, cross, circle)
     best_score = None

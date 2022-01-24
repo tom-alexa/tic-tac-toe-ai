@@ -10,7 +10,7 @@ def print_board(board, name=None):
 
 
 def print_winner(winner):
-    print(f"Winner is {winner}\n")
+    print(f"\nWinner is {winner}\n")
 
 def print_draw():
-    print("It's a draw\n")
+    print("\nIt's a draw\n")

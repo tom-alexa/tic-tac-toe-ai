@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import random
 from src.game import Game
 
@@ -11,9 +13,9 @@ def main():
         players["cross"]["name"] = first
         players["cross"]["ai"] = False
     second = input("Player's two name [no input means AI]: ")
-    if first:
-        players["cross"]["name"] = second
-        players["cross"]["ai"] = False
+    if second:
+        players["circle"]["name"] = second
+        players["circle"]["ai"] = False
     game = Game(players)
     game.run()
 
