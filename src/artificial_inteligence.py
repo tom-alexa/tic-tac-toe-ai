@@ -1,6 +1,12 @@
+"""Used for selecting random move in list of best moves"""
 import random
 
-def minimax(cross, circle, board, turn, get_current_player, get_possible_moves, make_move, check_winner):
+
+def minimax(cross, circle, board, turn, get_current_player,
+            get_possible_moves, make_move, check_winner) -> tuple[int, int]:
+    """
+    Return best move and its score
+    """
     possible_moves = get_possible_moves(board)
     current_player = get_current_player(turn, cross, circle)
     best_score = None
@@ -15,8 +21,9 @@ def minimax(cross, circle, board, turn, get_current_player, get_possible_moves, 
         if not get_possible_moves(new_board):
             return 0, move
 
-        score, _ = minimax(cross, circle, new_board, turn * -1, get_current_player, get_possible_moves, make_move, check_winner)
-        if best_score == None:
+        score, _ = minimax(cross, circle, new_board, turn * -1,
+                           get_current_player, get_possible_moves, make_move, check_winner)
+        if best_score is None:
             best_score = score
         if score == best_score:
             best_moves.append(move)
